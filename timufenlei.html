@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            margin: 0 auto;
+            border: 1px solid black;
+            text-align: center;
+            border-spacing: 0;
+        }
+        table thead th{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        table tbody th,td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        table tbody th{
+            position: relative;
+        }
+        table tbody th input{
+            position: absolute;
+            left: 10px;
+            top: 13px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <table>
+        <thead>
+        <th>序号</th>
+        <th>编号</th>
+        <th>信息编码</th>
+        <th>编码</th>
+        <th>类型名称</th>
+        <th>类型</th>
+        <th>类型价值</th>
+        <th>默认顺序</th>
+        <th>展示顺序</th>
+        <th>长度</th>
+        <th>开始时间</th>
+        <th>操作者</th>
+        <th>操作时间</th>
+        </thead>
+        <tbody v-for="(item,index) in columnList" :key="index">
+        <th>{{ index+1 }}</th>
+        <td>{{ item.id }}</td>
+        <td>{{ item.informationCode }}</td>
+        <td>{{ item.code }}</td>
+        <td>{{ item.colName }}</td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.colValue }}</td>
+        <td>{{ item.defaultOrder }}</td>
+        <td>{{ item.displayOrder }}</td>
+        <td>{{ item.clomunsLength }}</td>
+        <td>{{ item.startTime }}</td>
+        <td>{{ item.operator }}</td>
+        <td>{{ item.operation_time }}</td>
+        </tbody>
+        </table>
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data: {
+            "columnList": [{
+                "id": 157,
+                "informationCode": "tab_tk01",
+                "code": "tk01001",
+                "colName": "题干",
+                "type": 0,
+                "colValue": "",
+                "defaultOrder": 157,
+                "displayOrder": 157,
+                "showType": 0,
+                "multi": 0,
+                "anyNode": 0,
+                "clomunsLength": 255,
+                "picSize": null,
+                "startTime": "2019-10-12",
+                "isSys": 1,
+                "status": 1,
+                "accountTypeId": 10,
+                "isMust": 1,
+                "changed": 1,
+                "hasStartTime": 0,
+                "startTimeChange": null,
+                "defaultShow": 1,
+                "colunmsWidth": "200",
+                "operator": "管理员",
+                "operation_time": "2019-10-12 19:23:24",
+                "industry": null,
+                "writeType": 1,
+                "isEncrypt": "0",
+                "isStartTime": null,
+                "moduleCode": "1",
+                "remark": null,
+                "isLock": 0,
+                "multiple": null,
+                "isSearch": 1
+            }, {
+                "id": 158,
+                "informationCode": "tab_tk01",
+                "code": "tk01002",
+                "colName": "所属分类",
+                "type": 2,
+                "colValue": "TMFL",
+                "defaultOrder": 158,
+                "displayOrder": 158,
+                "showType": 0,
+                "multi": 0,
+                "anyNode": 0,
+                "clomunsLength": 40,
+                "picSize": null,
+                "startTime": "2019-10-12",
+                "isSys": 1,
+                "status": 1,
+                "accountTypeId": 10,
+                "isMust": 1,
+                "changed": 1,
+                "hasStartTime": 0,
+                "startTimeChange": null,
+                "defaultShow": 1,
+                "colunmsWidth": null,
+                "operator": "管理员",
+                "operation_time": "2019-10-12 19:23:24",
+                "industry": null,
+                "writeType": 0,
+                "isEncrypt": "0",
+                "isStartTime": null,
+                "moduleCode": "1",
+                "remark": null,
+                "isLock": 0,
+                "multiple": null,
+                "isSearch": 1
+            }, {
+                "id": 159,
+                "informationCode": "tab_tk01",
+                "code": "tk01003",
+                "colName": "题型",
+                "type": 1,
+                "colValue": "TX",
+                "defaultOrder": 159,
+                "displayOrder": 159,
+                "showType": 0,
+                "multi": 0,
+                "anyNode": 0,
+                "clomunsLength": 8,
+                "picSize": null,
+                "startTime": "2019-10-12",
+                "isSys": 1,
+                "status": 1,
+                "accountTypeId": 10,
+                "isMust": 1,
+                "changed": 1,
+                "hasStartTime": 0,
+                "startTimeChange": null,
+                "defaultShow": 1,
+                "colunmsWidth": null,
+                "operator": "管理员",
+                "operation_time": "2019-10-12 19:23:24",
+                "industry": null,
+                "writeType": 0,
+                "isEncrypt": "0",
+                "isStartTime": null,
+                "moduleCode": "1",
+                "remark": null,
+                "isLock": 0,
+                "multiple": null,
+                "isSearch": 1
+            }, {
+                "id": 160,
+                "informationCode": "tab_tk01",
+                "code": "tk01004",
+                "colName": "所属课程",
+                "type": 27,
+                "colValue": "",
+                "defaultOrder": 160,
+                "displayOrder": 160,
+                "showType": 0,
+                "multi": 0,
+                "anyNode": 0,
+                "clomunsLength": 40,
+                "picSize": null,
+                "startTime": "2019-10-12",
+                "isSys": 1,
+                "status": 1,
+                "accountTypeId": 10,
+                "isMust": 1,
+                "changed": 1,
+                "hasStartTime": 0,
+                "startTimeChange": null,
+                "defaultShow": 1,
+                "colunmsWidth": null,
+                "operator": "管理员",
+                "operation_time": "2019-10-12 19:23:24",
+                "industry": null,
+                "writeType": 0,
+                "isEncrypt": "0",
+                "isStartTime": null,
+                "moduleCode": "1",
+                "remark": null,
+                "isLock": 0,
+                "multiple": null,
+                "isSearch": 1
+            }, {
+                "id": 161,
+                "informationCode": "tab_tk01",
+                "code": "tk01005",
+                "colName": "难易程度",
+                "type": 1,
+                "colValue": "NY",
+                "defaultOrder": 161,
+                "displayOrder": 161,
+                "showType": 0,
+                "multi": 0,
+                "anyNode": 0,
+                "clomunsLength": 8,
+                "picSize": null,
+                "startTime": "2019-10-12",
+                "isSys": 1,
+                "status": 1,
+                "accountTypeId": 10,
+                "isMust": 1,
+                "changed": 1,
+                "hasStartTime": 0,
+                "startTimeChange": null,
+                "defaultShow": 1,
+                "colunmsWidth": null,
+                "operator": "管理员",
+                "operation_time": "2019-10-12 19:23:24",
+                "industry": null,
+                "writeType": 0,
+                "isEncrypt": "0",
+                "isStartTime": null,
+                "moduleCode": "1",
+                "remark": null,
+                "isLock": 0,
+                "multiple": null,
+                "isSearch": 1
+            }, {
+                "id": 254,
+                "informationCode": "tab_tk01",
+                "code": "status",
+                "colName": "状态",
+                "type": 1,
+                "colValue": "KCZT",
+                "defaultOrder": 163,
+                "displayOrder": 163,
+                "showType": 0,
+                "multi": 0,
+                "anyNode": 0,
+                "clomunsLength": 255,
+                "picSize": null,
+                "startTime": "2019-10-12",
+                "isSys": 1,
+                "status": 1,
+                "accountTypeId": 10,
+                "isMust": 1,
+                "changed": 1,
+                "hasStartTime": 0,
+                "startTimeChange": null,
+                "defaultShow": 1,
+                "colunmsWidth": null,
+                "operator": "管理员",
+                "operation_time": "2019-10-12 19:23:24",
+                "industry": null,
+                "writeType": 0,
+                "isEncrypt": "0",
+                "isStartTime": null,
+                "moduleCode": "1",
+                "remark": null,
+                "isLock": 0,
+                "multiple": null,
+                "isSearch": 1
+            }, {
+                "id": 164,
+                "informationCode": "tab_tk01",
+                "code": "tk01008",
+                "colName": "答案",
+                "type": 0,
+                "colValue": "",
+                "defaultOrder": 164,
+                "displayOrder": 164,
+                "showType": 0,
+                "multi": 0,
+                "anyNode": 0,
+                "clomunsLength": 255,
+                "picSize": null,
+                "startTime": "2019-10-12",
+                "isSys": 1,
+                "status": 1,
+                "accountTypeId": 10,
+                "isMust": 1,
+                "changed": 1,
+                "hasStartTime": 0,
+                "startTimeChange": null,
+                "defaultShow": 1,
+                "colunmsWidth": null,
+                "operator": "管理员",
+                "operation_time": "2019-10-12 19:23:24",
+                "industry": null,
+                "writeType": 0,
+                "isEncrypt": "0",
+                "isStartTime": null,
+                "moduleCode": "1",
+                "remark": null,
+                "isLock": 0,
+                "multiple": null,
+                "isSearch": 1
+            }, {
+                "id": 165,
+                "informationCode": "tab_tk01",
+                "code": "tk01009",
+                "colName": "解析",
+                "type": 0,
+                "colValue": "",
+                "defaultOrder": 165,
+                "displayOrder": 165,
+                "showType": 0,
+                "multi": 0,
+                "anyNode": 0,
+                "clomunsLength": 255,
+                "picSize": null,
+                "startTime": "2019-10-12",
+                "isSys": 1,
+                "status": 1,
+                "accountTypeId": 10,
+                "isMust": 1,
+                "changed": 1,
+                "hasStartTime": 0,
+                "startTimeChange": null,
+                "defaultShow": 1,
+                "colunmsWidth": null,
+                "operator": "管理员",
+                "operation_time": "2019-10-12 19:23:24",
+                "industry": null,
+                "writeType": 0,
+                "isEncrypt": "0",
+                "isStartTime": null,
+                "moduleCode": "1",
+                "remark": null,
+                "isLock": 0,
+                "multiple": null,
+                "isSearch": 1
+            }, {
+                "id": 163,
+                "informationCode": "tab_tk01",
+                "code": "tk01007",
+                "colName": "选项",
+                "type": 0,
+                "colValue": "",
+                "defaultOrder": 166,
+                "displayOrder": 166,
+                "showType": 0,
+                "multi": 0,
+                "anyNode": 0,
+                "clomunsLength": 255,
+                "picSize": null,
+                "startTime": "2019-10-12",
+                "isSys": 1,
+                "status": 1,
+                "accountTypeId": 10,
+                "isMust": 0,
+                "changed": 1,
+                "hasStartTime": 0,
+                "startTimeChange": null,
+                "defaultShow": 1,
+                "colunmsWidth": null,
+                "operator": "管理员",
+                "operation_time": "2019-10-12 19:23:24",
+                "industry": null,
+                "writeType": 0,
+                "isEncrypt": "0",
+                "isStartTime": null,
+                "moduleCode": "1",
+                "remark": null,
+                "isLock": 0,
+                "multiple": null,
+                "isSearch": 1
+            }]
+        }
+    })
+</script>
+
+</body>
+</html>

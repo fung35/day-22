@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            margin: 0 auto;
+        }
+        .firstfloor {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .firstfloor td{
+            display: inline-block;
+            margin-right: 80px;
+        }
+        .firstfloor td:first-child select{
+           width: 500px;
+        }
+        span {
+            color: red;
+        }
+        .thirdfloor {
+            display: inline-block;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .thirdfloor td{
+            display: inline-block;
+            margin-right: 80px;
+        }
+        .thirdfloor td:first-child select{
+            width: 500px;
+        }
+        .answer {
+            display: block;
+            margin-bottom: 20px;
+        }
+        .jiexi {
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>添加题目</h1>
+    <table>
+        <tr class="firstfloor">
+            <td><span>*</span>题型：<select><option v-for="item in tixing">{{ item.tname }}</option></select></td>
+            <td><span>*</span>所属分类：<select><option v-for="item in suoshufenglei">{{ item.sname }}<option></select></td>
+        </tr>
+        <tr>
+            <td><span>*</span>题干：<input type="text" style="width: 700px"></td>
+        </tr>
+        <tr class="thirdfloor">
+            <td><span>*</span>所属课程：<select><option v-for="item in course">{{ item.cname }}</option></select></td>
+            <td><span>*</span>难易程度：<select><option v-for="item in difficulty">{{ item.dname }}<option></select></td>
+        </tr>
+        <tr class="answer">
+            <td><span>*</span>答案：<input type="text" style="width: 700px"></td>
+        </tr>
+        <tr class="jiexi">
+            <td><span>*</span>解析：<input type="text" style="width: 700px"></td>
+        </tr>
+        <tr>
+            <td><span>*</span>状态：<select><option>启用</option></select></td>
+        </tr>
+        <tr>
+            <td><input type="file"></td>
+        </tr>
+    </table>
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data: {
+            tixing: [
+                {tname: '单选题'},
+                {tname:'多选题'},
+                {tname: '填空题'},
+                {tname: '论述题'}],
+            suoshufenglei:[
+                {sname: '试卷1'},
+                {sname: '试卷2'},
+                {sname: '期中考试试卷'},
+                {sname: '期末考试试卷'},
+            ],
+            course:[
+                {cname: '语文'},
+                {cname: '数学'},
+                {cname: '地理'},
+                {cname: '药品检测'},
+                {cname: '文学鉴赏'}
+            ],
+            difficulty:[
+                {dname: '容易'},
+                {dname: '普通'},
+                {dname: '困难'}
+            ]
+        }
+    })
+</script>
+</body>
+</html>
